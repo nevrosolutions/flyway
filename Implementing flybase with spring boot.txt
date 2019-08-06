@@ -1,0 +1,27 @@
+1. Add flyway dependancy to pom.xml as follow
+
+   		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+
+2. Configure flyways properties in application.properties
+
+                spring.flyway.url = jdbc:mysql://localhost:3306/flyways
+		spring.flyway.schemas = flyways
+		spring.flyway.user = root
+		spring.flyway.password = 1234
+
+3. Create db folder in resource and create migration folder in db folder.
+   When required to modify database create a file in following format
+
+    V1__Description_of_Modification_By_Name_Of_Developer.sql
+
+4. Best practices
+   
+   1. Do not modify existing .sql files.
+   2. V*__ Must be prefixed (* can be 1, 2, or 1.2 , 1.3 ect)
+   3. Developer name should be in description.
+
+ 
+
